@@ -20,20 +20,20 @@
         android:id="@+id/staticTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pavels Tuliss"
+        android:text="@string/nameSurname"
         android:textColor="#808080"
         app:layout_constraintTop_toBottomOf="@id/topBar"
         app:layout_constraintStart_toStartOf="parent"
         android:layout_marginTop="15dp"
         android:layout_marginStart="15dp"
-        android:textSize="20dp"/>
+        android:textSize="20sp"/>
 
     <EditText
         android:id="@+id/firstInput"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
-        android:hint="0"
+        android:hint="@string/_0"
         android:textSize="16sp"
         android:layout_marginStart="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -46,7 +46,7 @@
         android:layout_height="48dp"
         android:layout_marginTop="8dp"
         android:layout_marginStart="10dp"
-        android:hint="0"
+        android:hint="@string/_0"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -55,9 +55,9 @@
     <!-- Inside your layout XML file -->
     <Button
         android:id="@+id/calculateButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Calculate"
+        android:text="@string/calculate"
         app:layout_constraintTop_toBottomOf="@id/secondInput"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -66,22 +66,46 @@
         android:id="@+id/result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="20dp"
+        android:text="@string/_0"
+        android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/calculateButton"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"/>
 
     <Button
         android:id="@+id/showResultButton"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Navigate"
+        android:text="@string/navigate"
         app:layout_constraintTop_toBottomOf="@id/result"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp"/>
+        android:layout_marginTop="15dp" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintTop_toBottomOf="@id/showResultButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:progress="0" />
+
+    <TextView
+        android:id="@+id/SeekBarTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_0"
+        android:textSize="20sp"
+        android:layout_below="@id/seekBar"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintTop_toBottomOf="@id/seekBar"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="16dp" />
 
 
 

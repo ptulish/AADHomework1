@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
@@ -16,6 +17,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var secondInput: EditText;
     private lateinit var topBar: Toolbar
     private lateinit var resultTextView: TextView;
+    private lateinit var seekBar: SeekBar;
+    private lateinit var SeekBarTextView: TextView;
     public var sum: Int = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,6 +46,25 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("result", sum)
             startActivity(intent)
         }
+
+        seekBar = findViewById(R.id.seekBar)
+        SeekBarTextView = findViewById(R.id.SeekBarTextView)
+
+        seekBar.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
+            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
+                SeekBarTextView.text = "$progress"
+            }
+
+            override fun onStartTrackingTouch(seekBar: SeekBar?) {
+
+            }
+
+            override fun onStopTrackingTouch(seekBar: SeekBar?) {
+
+            }
+        })
+
+        SeekBarTextView.text = "${seekBar.progress}"
     }
 
     fun onButtonClick() {
@@ -72,6 +94,6 @@ class MainActivity : AppCompatActivity() {
         sum = first + second;
     }
     private fun updateResultText() {
-        resultTextView.text = "Result: $sum"
+        resultTextView.text = "$sum"
     }
 }
